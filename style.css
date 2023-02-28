@@ -430,11 +430,13 @@ footer {
     position: fixed;
     left: -100%;
     top: 2.8rem;
+    padding-top: 20px;
     display: flex;
-    flex-direction: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: start;
     background-color: #00a1ff;
-    width: 100%;
+    width: 50%;
+    height: 100%;
     transition: 0.7s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
@@ -449,14 +451,13 @@ footer {
   .nav-menu .nav-item .nav-link:nth-child(1) {
     display: flex;
   }
-
   .nav-item {
     margin-bottom: 1rem;
   }
-
   .nav-link {
     font-size: 1rem;
     color: black;
+    margin-left: 0.5rem;
   }
   .nav-link:hover {
     text-decoration-color: black;
