@@ -18,7 +18,10 @@ body {
   /* overflow: hidden; */
   /* overflow-y: scroll */
 }
-
+::-webkit-scrollbar{
+  background: #26afff;
+  display: none;
+}
 /* Animation was added to the wrapper */
 .wrapper {
   animation: scroll 70s linear infinite;
@@ -52,11 +55,13 @@ header{
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 .active_nav {
   transition-duration: .5s;
   background-color:  #00a2ff;
   box-shadow: 0 0 .5rem rgb(0, 0, 0, 6);
+  z-index: 1;
 }
 .active_nav .nav-menu a {
   color: black;
@@ -86,6 +91,20 @@ header p {
   font-size: 1rem;
   color: #00a1ff;
   font-family: "Roboto Slab", serif;
+  transition: .3s;
+  display: inline-block;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+@keyframes slideTop {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .nav-link:hover {
   text-decoration-color: mistyrose;
@@ -97,6 +116,8 @@ header p {
 
 #aboutme {
   max-width: 22rem;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
 }
 #aboutme p {
   line-height: 1.3rem;
@@ -115,6 +136,8 @@ h4 span {
 }
 .call-to-action-btns {
   display: flex;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .9s;
 }
 button {
   padding: 10px 15px;
@@ -151,8 +174,20 @@ button {
   gap: 1rem;
   max-width: 100%;
 }
+@keyframes slideBottom {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .name {
   letter-spacing: 0.1rem;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
 }
 section {
   display: flex;
@@ -208,8 +243,19 @@ section {
 .projects {
   display: flex;
   justify-content: center;
+  animation: slideUp 1s ease forwards;
+  animation-delay: .9s;
 }
-
+@keyframes slideUp {
+  0% {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .to-fade-in {
   opacity: 0;
 }
@@ -256,6 +302,18 @@ section {
   border-top-left-radius: 100%;
   max-width: 280px;
   border-top-color: mistyrose;
+  animation: slideRight 1s ease forwards;
+  animation-delay: .9s;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .about-technologies {
